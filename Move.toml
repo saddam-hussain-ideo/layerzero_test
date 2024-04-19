@@ -1,0 +1,19 @@
+[package]
+name = "layerzero_test"
+version = "1.0.0"
+authors = []
+
+[addresses]
+test_address = "9cb4d78f9aa2eb64d0236356ebd6f217c73607c94ea7b3a4f14d8da6f9951ffa"
+bridge = "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.bridge]
+git = "https://github.com/saddam-hussain-ideo/LayerZero-Aptos-Contract.git"
+subdir = "apps/bridge/"
+rev = "main"
+
