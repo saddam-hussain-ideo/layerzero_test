@@ -1,8 +1,7 @@
 module test_address::layerzero_test {
 
     use std::signer;
-    use std::vector;
-    use bridge::coin_bridge::{quote_fee, send_coin_from};
+    use bridge::coin_bridge::{send_coin_from, quote_fee};
 
     struct Metadata has key {
         admin: address,
@@ -12,6 +11,17 @@ module test_address::layerzero_test {
         move_to(admin, Metadata {
             admin: signer::address_of(admin),
         });
+    }
+
+    #[view]
+    public fun quote_fee_evm(
+        dst_chain_id: u64,
+        pay_in_zro: bool,
+        adapter_params: vector<u8>,
+        msglib_params: vector<u8>
+    ): (u64, u64) {
+        let (native_fee, zro_fee) = quote_fee(dst_chain_id, pay_in_zro, adapter_params, msglib_params);
+        (native_fee, zro_fee)
     }
 
     public entry fun send_coin_from_aptos<CoinType>(
