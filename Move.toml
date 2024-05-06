@@ -4,7 +4,9 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-test_address = "e269c28a49ea90095746bb80bc639e6336b0a93e1695dc671e3ee82ad1053057"
+galnt_address = "a44012b27a1819b7cf020bfe9dfc43e2b14273694236ed38afa8bf84a4530e45"
+galnt_default_admin = "e269c28a49ea90095746bb80bc639e6336b0a93e1695dc671e3ee82ad1053057"
+galnt_dev = "e269c28a49ea90095746bb80bc639e6336b0a93e1695dc671e3ee82ad1053057"
 bridge = "0xf22bede237a07e121b56d91a491eb7bcdfd1f5907926a9e58338f964a01b17fa"
 
 [dependencies.AptosFramework]
